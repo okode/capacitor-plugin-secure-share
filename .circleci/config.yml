@@ -1,0 +1,52 @@
+version: 2.1
+
+shared: &shared
+  context: org-global
+
+orbs:
+  android: circleci/android@2
+  node: circleci/node@5
+
+jobs:
+  android:
+    executor:
+      name: android/android-machine
+      tag: 202102-01
+    steps:
+      - checkout
+      - node/install-packages
+      - android/create-avd:
+          avd-name: test
+          install: true
+          system-image: "system-images;android-29;default;x86"
+      - android/start-emulator:
+          avd-name: test
+          post-emulator-launch-assemble-command: ''
+      - android/run-tests:
+          working-directory: android
+      - android/kill-emulators
+  ios:
+    macos:
+      xcode: '14.0.1'
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          name: Cocoapods install
+          command: cd ios && pod install
+      - run:
+          name: Testing iOS
+          command: |
+            cd ios
+            xcodebuild build-for-testing -workspace Plugin.xcworkspace -scheme PluginTests -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.0'
+            xcodebuild test -workspace Plugin.xcworkspace -scheme PluginTests -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.0'
+
+workflows:
+  default:
+    jobs:
+      - android:
+          <<: *shared
+          name: android
+      - ios:
+          <<: *shared
+          name: ios
