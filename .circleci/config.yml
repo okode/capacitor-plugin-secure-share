@@ -64,4 +64,6 @@ workflows:
           <<: *tags
           name: deploy
           npm-run: publish
+          setup:
+            - run: npx npm-cli-adduser
 
