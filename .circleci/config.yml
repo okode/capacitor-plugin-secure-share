@@ -65,5 +65,5 @@ workflows:
           name: deploy
           npm-run: publish
           setup:
-            - run: npx npm-cli-adduser
+            - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
 
