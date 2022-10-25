@@ -63,7 +63,7 @@ workflows:
       - node/run:
           <<: *tags
           name: deploy
-          npm-run: publish
+          npm-run: publicPublish
           setup:
             - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
 
