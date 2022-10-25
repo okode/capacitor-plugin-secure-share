@@ -13,25 +13,72 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`save(...)`](#save)
+* [`clear()`](#clear)
+* [`retrieve()`](#retrieve)
+* [`retrieveFrom(...)`](#retrievefrom)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### save(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+save(data: Record<string, string>) => Promise<void>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
-
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+| Param      | Type                                                            | Description                                       |
+| ---------- | --------------------------------------------------------------- | ------------------------------------------------- |
+| **`data`** | <code><a href="#record">Record</a>&lt;string, string&gt;</code> | string to string map holding the data to be saved |
 
 --------------------
+
+
+### clear()
+
+```typescript
+clear() => Promise<void>
+```
+
+--------------------
+
+
+### retrieve()
+
+```typescript
+retrieve() => Promise<Record<string, string>>
+```
+
+**Returns:** <code>Promise&lt;<a href="#record">Record</a>&lt;string, string&gt;&gt;</code>
+
+--------------------
+
+
+### retrieveFrom(...)
+
+```typescript
+retrieveFrom(packageName: string) => Promise<Record<string, string>>
+```
+
+| Param             | Type                |
+| ----------------- | ------------------- |
+| **`packageName`** | <code>string</code> |
+
+**Returns:** <code>Promise&lt;<a href="#record">Record</a>&lt;string, string&gt;&gt;</code>
+
+--------------------
+
+
+### Type Aliases
+
+
+#### Record
+
+Construct a type with a set of properties K of type T
+
+<code>{ [P in K]: T; }</code>
 
 </docgen-api>
