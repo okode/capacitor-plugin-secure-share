@@ -1,7 +1,16 @@
 version: 2.1
 
-shared: &shared
+branches: &branches
   context: org-global
+
+tags: &tags
+  context: org-global
+  filters:
+    branches:
+      ignore:
+        - /.*/
+    tags:
+      only: /^([0-9]|[1-9][0-9]*)\.([0-9]|[1-9][0-9]*)\.([0-9]|[1-9][0-9]*)(-.*)?/
 
 orbs:
   android: circleci/android@2
@@ -40,13 +49,19 @@ jobs:
             cd ios
             xcodebuild build-for-testing -workspace Plugin.xcworkspace -scheme PluginTests -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.0'
             xcodebuild test -workspace Plugin.xcworkspace -scheme PluginTests -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.0'
+  deploy:
 
 workflows:
   default:
     jobs:
       - android:
-          <<: *shared
+          <<: *branches
           name: android
       - ios:
-          <<: *shared
+          <<: *branches
           name: ios
+      - node/run:
+          <<: *tags
+          name: deploy
+          npm-run: publish --access public
+
