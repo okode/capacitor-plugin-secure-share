@@ -1,5 +1,4 @@
 export interface SecureSharePlugin {
-  echo(data: Record<string, string>): Promise<void>;
   /**
    * @description      Save data to be shared to other apps.
    *

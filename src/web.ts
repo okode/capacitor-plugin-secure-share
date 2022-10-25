@@ -4,11 +4,6 @@ import type { SecureSharePlugin } from './definitions';
 
 export class SecureShareWeb extends WebPlugin implements SecureSharePlugin {
 
-  echo(data: Record<string, string>): Promise<void> {
-    console.log(data);
-    throw this.unimplemented('Not implemented on web.');
-  }
-
   save(data: Record<string, string>): Promise<void> {
     console.log(data);
     throw this.unimplemented('Not implemented on web.');
@@ -22,4 +17,5 @@ export class SecureShareWeb extends WebPlugin implements SecureSharePlugin {
     console.log(data);
     throw this.unimplemented('Not implemented on web.');
   }
+
 }

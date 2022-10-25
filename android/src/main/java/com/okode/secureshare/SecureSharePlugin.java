@@ -10,13 +10,4 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 public class SecureSharePlugin extends Plugin {
 
     private SecureShare implementation = new SecureShare();
-
-    @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
-
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
-    }
 }
