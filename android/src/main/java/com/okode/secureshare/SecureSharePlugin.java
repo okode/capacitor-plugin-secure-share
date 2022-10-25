@@ -9,5 +9,4 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 @CapacitorPlugin(name = "SecureShare")
 public class SecureSharePlugin extends Plugin {
 
-    private SecureShare implementation = new SecureShare();
 }
