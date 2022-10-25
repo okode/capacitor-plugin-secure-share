@@ -63,5 +63,5 @@ workflows:
       - node/run:
           <<: *tags
           name: deploy
-          npm-run: publish --access public
+          npm-run: publish
 
