@@ -5,7 +5,7 @@ Capacitor Secure Share Plugin
 ## Install
 
 ```bash
-npm install capacitor-plugin-secure-share
+npm install @okode/capacitor-plugin-secure-share
 npx cap sync
 ```
 
