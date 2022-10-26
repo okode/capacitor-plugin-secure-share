@@ -13,8 +13,8 @@ export class SecureShareWeb extends WebPlugin implements SecureSharePlugin {
   retrieve(): Promise<Record<string, string>> {
     throw this.unimplemented('Not implemented on web.');
   }
-  retrieveFrom(packageName: string): Promise<Record<string, string>> {
-    console.log(packageName);
+  retrieveFrom(data: Record<string, string>): Promise<Record<string, string>> {
+    console.log(data);
     throw this.unimplemented('Not implemented on web.');
   }
   async echo(options: { value: string }): Promise<{ value: string }> {
