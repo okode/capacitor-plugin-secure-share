@@ -1,4 +1,5 @@
 export interface SecureSharePlugin {
+  echo(data: Record<string, string>): Promise<void>;
   /**
    * @description      Save data to be shared to other apps.
    *
@@ -9,15 +10,6 @@ export interface SecureSharePlugin {
    * @errors           Error message from the cordova plugin
    */
   save(data: Record<string, string>): Promise<void>;
-
-  /**
-   * @description      Clears any data stored to be shared to other apps.
-   *
-   * @returns          A promise of void
-   *
-   * @errors           Error message from the cordova plugin
-   */
-  clear(): Promise<void>;
 
   /**
    * @description      Get data saved in secure share storage

@@ -14,6 +14,10 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
+* [`save(...)`](#save)
+* [`retrieve()`](#retrieve)
+* [`retrieveFrom(...)`](#retrievefrom)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
@@ -23,15 +27,62 @@ npx cap sync
 ### echo(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+echo(data: Record<string, string>) => Promise<void>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
-
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+| Param      | Type                                                            |
+| ---------- | --------------------------------------------------------------- |
+| **`data`** | <code><a href="#record">Record</a>&lt;string, string&gt;</code> |
 
 --------------------
+
+
+### save(...)
+
+```typescript
+save(data: Record<string, string>) => Promise<void>
+```
+
+| Param      | Type                                                            | Description                                       |
+| ---------- | --------------------------------------------------------------- | ------------------------------------------------- |
+| **`data`** | <code><a href="#record">Record</a>&lt;string, string&gt;</code> | string to string map holding the data to be saved |
+
+--------------------
+
+
+### retrieve()
+
+```typescript
+retrieve() => Promise<Record<string, string>>
+```
+
+**Returns:** <code>Promise&lt;<a href="#record">Record</a>&lt;string, string&gt;&gt;</code>
+
+--------------------
+
+
+### retrieveFrom(...)
+
+```typescript
+retrieveFrom(data: Record<string, string>) => Promise<Record<string, string>>
+```
+
+| Param      | Type                                                            |
+| ---------- | --------------------------------------------------------------- |
+| **`data`** | <code><a href="#record">Record</a>&lt;string, string&gt;</code> |
+
+**Returns:** <code>Promise&lt;<a href="#record">Record</a>&lt;string, string&gt;&gt;</code>
+
+--------------------
+
+
+### Type Aliases
+
+
+#### Record
+
+Construct a type with a set of properties K of type T
+
+<code>{ [P in K]: T; }</code>
 
 </docgen-api>
