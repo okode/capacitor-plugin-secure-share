@@ -60,12 +60,12 @@ retrieve() => Promise<Record<string, string>>
 ### retrieveFrom(...)
 
 ```typescript
-retrieveFrom(packageName: string) => Promise<Record<string, string>>
+retrieveFrom(data: Record<string, string>) => Promise<Record<string, string>>
 ```
 
-| Param             | Type                |
-| ----------------- | ------------------- |
-| **`packageName`** | <code>string</code> |
+| Param      | Type                                                            |
+| ---------- | --------------------------------------------------------------- |
+| **`data`** | <code><a href="#record">Record</a>&lt;string, string&gt;</code> |
 
 **Returns:** <code>Promise&lt;<a href="#record">Record</a>&lt;string, string&gt;&gt;</code>
 
