@@ -38,6 +38,6 @@ export interface SecureSharePlugin {
    *
    * @errors           Error message from the cordova plugin
    */
-  retrieveFrom(packageName: string): Promise<Record<string, string>>;
+  retrieveFrom(data: Record<string, string>): Promise<Record<string, string>>;
 
 }
