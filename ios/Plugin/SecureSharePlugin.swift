@@ -36,6 +36,15 @@ public class SecureSharePlugin: CAPPlugin {
         }
     }
 
+    @objc func retrieveFrom(_ call: CAPPluginCall){
+        if let appID = call.getString("packageName") {
+            let result = retrieve(from: appID, call)
+            call.resolve(["data": result])
+        } else {
+            call.resolve(["data": [:]])
+        }
+    }
+
     private func retrieve(from: String, _ call: CAPPluginCall) -> Dictionary<String, String> {
         var result: Dictionary<String, String> = [:];
         let keychain = self.getSharedKeyChainInstance()

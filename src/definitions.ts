@@ -29,6 +29,6 @@ export interface SecureSharePlugin {
    *
    * @errors           Error message from the cordova plugin
    */
-  retrieveFrom(data: Record<string, string>): Promise<Record<string, string>>;
+  retrieveFrom(data: { packageName: string }): Promise<Record<string, string>>;
 
 }

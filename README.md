@@ -36,15 +36,6 @@ save(data: Record<string, string>) => Promise<void>
 --------------------
 
 
-### clear()
-
-```typescript
-clear() => Promise<void>
-```
-
---------------------
-
-
 ### retrieve()
 
 ```typescript
@@ -59,12 +50,12 @@ retrieve() => Promise<Record<string, string>>
 ### retrieveFrom(...)
 
 ```typescript
-retrieveFrom(data: Record<string, string>) => Promise<Record<string, string>>
+retrieveFrom(data: { packageName: string; }) => Promise<Record<string, string>>
 ```
 
-| Param      | Type                                                            |
-| ---------- | --------------------------------------------------------------- |
-| **`data`** | <code><a href="#record">Record</a>&lt;string, string&gt;</code> |
+| Param      | Type                                  |
+| ---------- | ------------------------------------- |
+| **`data`** | <code>{ packageName: string; }</code> |
 
 **Returns:** <code>Promise&lt;<a href="#record">Record</a>&lt;string, string&gt;&gt;</code>
 
@@ -78,8 +69,6 @@ retrieveFrom(data: Record<string, string>) => Promise<Record<string, string>>
 
 Construct a type with a set of properties K of type T
 
-<code>{
- [P in K]: T;
- }</code>
+<code>{ [P in K]: T; }</code>
 
 </docgen-api>
