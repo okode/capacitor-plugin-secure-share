@@ -11,3 +11,7 @@ end
 target 'Plugin' do
   capacitor_pods
 end
+
+target 'PluginTests' do
+  capacitor_pods
+end
