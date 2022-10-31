@@ -30,7 +30,7 @@ public class SecureSharePlugin: CAPPlugin {
     @objc func retrieve(_ call: CAPPluginCall){
         if let appID = getCurrentAppID() {
             let result = retrieve(from: appID, call)
-            call.resolve(["data": result])
+            call.resolve(result)
         } else {
             call.reject("Unexpected error. Can't get appID!")
         }
@@ -39,9 +39,9 @@ public class SecureSharePlugin: CAPPlugin {
     @objc func retrieveFrom(_ call: CAPPluginCall){
         if let appID = call.getString("packageName") {
             let result = retrieve(from: appID, call)
-            call.resolve(["data": result])
+            call.resolve(result)
         } else {
-            call.resolve(["data": [:]])
+            call.resolve([:])
         }
     }
 
