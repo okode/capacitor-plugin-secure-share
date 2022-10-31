@@ -1,4 +1,4 @@
-package com.okode.secshare;
+package com.okode.secureshare;
 
 import com.okode.secureshare.SecureShareHelper;
 
