@@ -1,6 +1,6 @@
 {
   "name": "@okode/capacitor-plugin-secure-share",
-  "version": "1.0.14",
+  "version": "1.1.0",
   "description": "Capacitor Secure Share Plugin",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
